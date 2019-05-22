@@ -12,7 +12,7 @@ pipeline {
         sh 'mvn -B -DskipTests clean package'
       }
     }
-    stage('') {
+    stage('Test 1') {
       steps {
         sh 'echo "Everybody says Hi"'
       }
