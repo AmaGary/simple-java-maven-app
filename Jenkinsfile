@@ -13,8 +13,17 @@ pipeline {
       }
     }
     stage('Test 1') {
-      steps {
-        sh 'echo "Everybody says Hi"'
+      parallel {
+        stage('Test 1') {
+          steps {
+            sh 'echo "Everybody says Hi"'
+          }
+        }
+        stage('Parallel Test 1') {
+          steps {
+            sh 'echo "Parallel test 1"'
+          }
+        }
       }
     }
   }
